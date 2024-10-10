@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page 1</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+        }
+        #applyButton {
+            display: none; /* Initially hidden */
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to Page 1</h1>
+    <button id="applyButton" onclick="openPage2()">Apply</button>
+
+    <script>
+        function openPage2() {
+            window.open('page2.html', '_blank');
+        }
+
+        // Randomly show the apply button
+        function showApplyButton() {
+            const random = Math.random();
+            const button = document.getElementById('applyButton');
+            if (random < 0.5) { // 50% chance to show the button
+                button.style.display = 'block';
+            }
+        }
+
+        showApplyButton(); // Call the function when the page loads
+    </script>
+</body>
+</html>
