@@ -1,0 +1,11 @@
+// install this extension 
+https://autorefresh.io/options/#/custom-script
+
+// then run this script and start the script on page1.html
+
+setInterval(() => {
+    const applyButton = document.querySelector('button:contains("apply")'); // Modify the selector as needed
+    if (applyButton) {
+        applyButton.click();
+    }
+}, 2000); // Checks every 2 seconds
