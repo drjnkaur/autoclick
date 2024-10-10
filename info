@@ -1,6 +1,10 @@
 // install this extension 
 https://autorefresh.io/options/#/custom-script
 
+//-----------------------------------------------------
+// .hiring.amazon.ca/*
+//-------------------------------------------------------------------
+
 // then run this script and start the script on page1.html
 (function() {
     'use strict';
