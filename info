@@ -2,10 +2,29 @@
 https://autorefresh.io/options/#/custom-script
 
 // then run this script and start the script on page1.html
+(function() {
+    'use strict';
 
-setInterval(() => {
-    const applyButton = document.querySelector('button:contains("apply")'); // Modify the selector as needed
-    if (applyButton) {
-        applyButton.click();
+    // Function to search for any element containing the text 'Apply' and click on it
+    function clickApplyButton() {
+        let applyFound = false;  // Flag to check if 'Apply' was found
+        const elements = document.querySelectorAll('*');  // Get all elements
+
+        elements.forEach(element => {
+            if (element.innerText && element.innerText.toLowerCase().includes('apply')) {
+                element.click();  // Click on the element with "Apply"
+                console.log('Apply button clicked!');
+                applyFound = true;  // Mark that 'Apply' was found
+            }
+        });
+
+        // If 'Apply' is not found, show an alert
+        if (!applyFound) {
+            alert('Apply button not found');
+        }
     }
-}, 2000); // Checks every 2 seconds
+
+    // Execute the function
+    clickApplyButton();
+})();
+
